@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebAppSeguimiento.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DHL - Seguimiento ILO</title>
+    <link type="text/css" rel="stylesheet" href="<%=ResolveUrl("~/Content/bootstrap.css")%>" /> 
+    <script type="text/javascript" src="<%= ResolveUrl("~/Scripts/bootstrap.min.js") %>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/Scripts/jquery-1.10.2.min.js") %>"></script>
+    <link rel="shortcut icon" href="<%=ResolveUrl("~/Images/dhlA.ico") %>" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="Index.aspx">
+                        <img alt="Brand" src="Images/dhl-logo.png" width="100" height="18">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" <% Response.Write(Session["visibleOpciones"]); %>>
+                        <li><a runat="server" href="Index.aspx"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                        <%--<li><a runat="server" href="AltaReabasto.aspx"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Adjunta tus archivos</a></li>--%>
+                        <li><a runat="server" href="InfoPlaneacion.aspx"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Nuevo Seguimiento</a></li>
+                        <li><a runat="server" href="Seguimiento.aspx"><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Seguimiento</a></li>
+                        <li><a runat="server" href="ModSeguimiento.aspx"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Modificacion del Seguimiento</a></li>
+                        <li <% Response.Write(Session["visibleLogout"]); %>><a><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <asp:Label ID="lblUser" runat="server" Text=""></asp:Label></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav" <% Response.Write(Session["visibleAzucar"]); %>>
+                        <li><a runat="server" href="Index.aspx"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                        <%--<li><a runat="server" href="AltaReabasto.aspx"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Adjunta tus archivos</a></li>--%>
+                        <li><a runat="server" href="InfoAzucar.aspx"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Nuevo Seguimiento</a></li>
+                        <li><a runat="server" href="Azucar.aspx"><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Seguimiento Azucar</a></li>
+                        <li><a runat="server" href="ModAzucar.aspx"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Modificacion del Seguimiento</a></li>
+                        <li <% Response.Write(Session["visibleLogout"]); %>><a><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <asp:Label ID="lblUserA" runat="server" Text=""></asp:Label></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" <% Response.Write(Session["visibleLogin"]); %>>
+                        <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" <% Response.Write(Session["visibleLogout"]); %>>
+                         <li>
+                             <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click">
+                                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout
+                            </asp:LinkButton>
+                         </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - DHL Supply Chain</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>

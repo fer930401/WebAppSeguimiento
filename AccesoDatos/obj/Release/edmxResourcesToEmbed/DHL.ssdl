@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DHL_SCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="sp_WebAppAdmSeguimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="cv" Type="nvarchar" Mode="In" />
+    <Parameter Name="ruta" Type="nvarchar" Mode="In" />
+    <Parameter Name="proveedor" Type="nvarchar" Mode="In" />
+    <Parameter Name="placas" Type="nvarchar" Mode="In" />
+    <Parameter Name="carrier" Type="nvarchar" Mode="In" />
+    <Parameter Name="tip_unidad" Type="nvarchar" Mode="In" />
+    <Parameter Name="operador" Type="nvarchar" Mode="In" />
+    <Parameter Name="fec_recoleccion" Type="datetime" Mode="In" />
+    <Parameter Name="alm_descarga" Type="nvarchar" Mode="In" />
+    <Parameter Name="status" Type="nvarchar" Mode="In" />
+    <Parameter Name="fec_llegadaRealProv" Type="datetime" Mode="In" />
+    <Parameter Name="fec_entradaRealProv" Type="datetime" Mode="In" />
+    <Parameter Name="llegada_otdProv" Type="nvarchar" Mode="In" />
+    <Parameter Name="llegada_delayProv" Type="time" Mode="In" />
+    <Parameter Name="llegada_justiProv" Type="nvarchar" Mode="In" />
+    <Parameter Name="llegada_comenProv" Type="nvarchar" Mode="In" />
+    <Parameter Name="fec_salidaRealProv" Type="datetime" Mode="In" />
+    <Parameter Name="salida_otdProv" Type="nvarchar" Mode="In" />
+    <Parameter Name="salida_delayProv" Type="time" Mode="In" />
+    <Parameter Name="salida_justiProv" Type="nvarchar" Mode="In" />
+    <Parameter Name="salida_comenProv" Type="nvarchar" Mode="In" />
+    <Parameter Name="fec_llegadaRealMonde" Type="datetime" Mode="In" />
+    <Parameter Name="fec_entradaRealMonde" Type="datetime" Mode="In" />
+    <Parameter Name="llegada_otdMonde" Type="nvarchar" Mode="In" />
+    <Parameter Name="llegada_delayMonde" Type="time" Mode="In" />
+    <Parameter Name="llegada_justiMonde" Type="nvarchar" Mode="In" />
+    <Parameter Name="llegada_comenMonde" Type="nvarchar" Mode="In" />
+    <Parameter Name="fec_salidaRealMonde" Type="datetime" Mode="In" />
+    <Parameter Name="salida_otdMonde" Type="nvarchar" Mode="In" />
+    <Parameter Name="salida_delayMonde" Type="time" Mode="In" />
+    <Parameter Name="salida_justiMonde" Type="nvarchar" Mode="In" />
+    <Parameter Name="salida_comenMonde" Type="nvarchar" Mode="In" />
+    <Parameter Name="fec_salidaProgProv" Type="datetime" Mode="In" />
+    <Parameter Name="fec_salidaProgMonde" Type="datetime" Mode="In" />
+    <Parameter Name="estadiaProv" Type="time" Mode="In" />
+    <Parameter Name="estadiaMonde" Type="time" Mode="In" />
+    <Parameter Name="fec_progMonde" Type="datetime" Mode="In" />
+    <Parameter Name="opc" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_WebAppConsultaSeguimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filtro1" Type="nvarchar" Mode="In" />
+    <Parameter Name="iltro2" Type="nvarchar" Mode="In" />
+    <Parameter Name="opc" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_WebAppSeguimientoConsDatos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opc" Type="int" Mode="In" />
+    <Parameter Name="cve_filtro_1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cve_filtro_2" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="DHL_SCModelStoreContainer" />
+</Schema>

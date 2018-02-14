@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DHL_SCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="sp_WebAppAdmSeguimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="cv" Type="nvarchar" Mode="In" />
+          <Parameter Name="ruta" Type="nvarchar" Mode="In" />
+          <Parameter Name="proveedor" Type="nvarchar" Mode="In" />
+          <Parameter Name="placas" Type="nvarchar" Mode="In" />
+          <Parameter Name="carrier" Type="nvarchar" Mode="In" />
+          <Parameter Name="tip_unidad" Type="nvarchar" Mode="In" />
+          <Parameter Name="operador" Type="nvarchar" Mode="In" />
+          <Parameter Name="fec_recoleccion" Type="datetime" Mode="In" />
+          <Parameter Name="alm_descarga" Type="nvarchar" Mode="In" />
+          <Parameter Name="status" Type="nvarchar" Mode="In" />
+          <Parameter Name="fec_llegadaRealProv" Type="datetime" Mode="In" />
+          <Parameter Name="fec_entradaRealProv" Type="datetime" Mode="In" />
+          <Parameter Name="llegada_otdProv" Type="nvarchar" Mode="In" />
+          <Parameter Name="llegada_delayProv" Type="time" Mode="In" />
+          <Parameter Name="llegada_justiProv" Type="nvarchar" Mode="In" />
+          <Parameter Name="llegada_comenProv" Type="nvarchar" Mode="In" />
+          <Parameter Name="fec_salidaRealProv" Type="datetime" Mode="In" />
+          <Parameter Name="salida_otdProv" Type="nvarchar" Mode="In" />
+          <Parameter Name="salida_delayProv" Type="time" Mode="In" />
+          <Parameter Name="salida_justiProv" Type="nvarchar" Mode="In" />
+          <Parameter Name="salida_comenProv" Type="nvarchar" Mode="In" />
+          <Parameter Name="fec_llegadaRealMonde" Type="datetime" Mode="In" />
+          <Parameter Name="fec_entradaRealMonde" Type="datetime" Mode="In" />
+          <Parameter Name="llegada_otdMonde" Type="nvarchar" Mode="In" />
+          <Parameter Name="llegada_delayMonde" Type="time" Mode="In" />
+          <Parameter Name="llegada_justiMonde" Type="nvarchar" Mode="In" />
+          <Parameter Name="llegada_comenMonde" Type="nvarchar" Mode="In" />
+          <Parameter Name="fec_salidaRealMonde" Type="datetime" Mode="In" />
+          <Parameter Name="salida_otdMonde" Type="nvarchar" Mode="In" />
+          <Parameter Name="salida_delayMonde" Type="time" Mode="In" />
+          <Parameter Name="salida_justiMonde" Type="nvarchar" Mode="In" />
+          <Parameter Name="salida_comenMonde" Type="nvarchar" Mode="In" />
+          <Parameter Name="fec_salidaProgProv" Type="datetime" Mode="In" />
+          <Parameter Name="fec_salidaProgMonde" Type="datetime" Mode="In" />
+          <Parameter Name="estadiaProv" Type="time" Mode="In" />
+          <Parameter Name="estadiaMonde" Type="time" Mode="In" />
+          <Parameter Name="fec_progMonde" Type="datetime" Mode="In" />
+          <Parameter Name="opc" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_WebAppConsultaSeguimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="filtro1" Type="nvarchar" Mode="In" />
+          <Parameter Name="iltro2" Type="nvarchar" Mode="In" />
+          <Parameter Name="opc" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_WebAppSeguimientoConsDatos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opc" Type="int" Mode="In" />
+          <Parameter Name="cve_filtro_1" Type="nvarchar" Mode="In" />
+          <Parameter Name="cve_filtro_2" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="DHL_SCModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DHL_SCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DHL_SCEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_WebAppSeguimientoConsDatos" ReturnType="Collection(DHL_SCModel.sp_WebAppSeguimientoConsDatos_Result)">
+            <Parameter Name="opc" Mode="In" Type="Int32" />
+            <Parameter Name="cve_filtro_1" Mode="In" Type="String" />
+            <Parameter Name="cve_filtro_2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_WebAppAdmSeguimiento" ReturnType="Collection(DHL_SCModel.sp_WebAppAdmSeguimiento_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="cv" Mode="In" Type="String" />
+            <Parameter Name="ruta" Mode="In" Type="String" />
+            <Parameter Name="proveedor" Mode="In" Type="String" />
+            <Parameter Name="placas" Mode="In" Type="String" />
+            <Parameter Name="carrier" Mode="In" Type="String" />
+            <Parameter Name="tip_unidad" Mode="In" Type="String" />
+            <Parameter Name="operador" Mode="In" Type="String" />
+            <Parameter Name="fec_recoleccion" Mode="In" Type="DateTime" />
+            <Parameter Name="alm_descarga" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="fec_llegadaRealProv" Mode="In" Type="DateTime" />
+            <Parameter Name="fec_entradaRealProv" Mode="In" Type="DateTime" />
+            <Parameter Name="llegada_otdProv" Mode="In" Type="String" />
+            <Parameter Name="llegada_delayProv" Mode="In" Type="Time" />
+            <Parameter Name="llegada_justiProv" Mode="In" Type="String" />
+            <Parameter Name="llegada_comenProv" Mode="In" Type="String" />
+            <Parameter Name="fec_salidaRealProv" Mode="In" Type="DateTime" />
+            <Parameter Name="salida_otdProv" Mode="In" Type="String" />
+            <Parameter Name="salida_delayProv" Mode="In" Type="Time" />
+            <Parameter Name="salida_justiProv" Mode="In" Type="String" />
+            <Parameter Name="salida_comenProv" Mode="In" Type="String" />
+            <Parameter Name="fec_llegadaRealMonde" Mode="In" Type="DateTime" />
+            <Parameter Name="fec_entradaRealMonde" Mode="In" Type="DateTime" />
+            <Parameter Name="llegada_otdMonde" Mode="In" Type="String" />
+            <Parameter Name="llegada_delayMonde" Mode="In" Type="Time" />
+            <Parameter Name="llegada_justiMonde" Mode="In" Type="String" />
+            <Parameter Name="llegada_comenMonde" Mode="In" Type="String" />
+            <Parameter Name="fec_salidaRealMonde" Mode="In" Type="DateTime" />
+            <Parameter Name="salida_otdMonde" Mode="In" Type="String" />
+            <Parameter Name="salida_delayMonde" Mode="In" Type="Time" />
+            <Parameter Name="salida_justiMonde" Mode="In" Type="String" />
+            <Parameter Name="salida_comenMonde" Mode="In" Type="String" />
+            <Parameter Name="fec_salidaProgProv" Mode="In" Type="DateTime" />
+            <Parameter Name="fec_salidaProgMonde" Mode="In" Type="DateTime" />
+            <Parameter Name="estadiaProv" Mode="In" Type="Time" />
+            <Parameter Name="estadiaMonde" Mode="In" Type="Time" />
+            <Parameter Name="fec_progMonde" Mode="In" Type="DateTime" />
+            <Parameter Name="opc" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_WebAppConsultaSeguimiento" ReturnType="Collection(DHL_SCModel.sp_WebAppConsultaSeguimiento_Result)">
+            <Parameter Name="filtro1" Mode="In" Type="String" />
+            <Parameter Name="iltro2" Mode="In" Type="String" />
+            <Parameter Name="opc" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_WebAppSeguimientoConsDatos_Result">
+          <Property Type="String" Name="cve_dato" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="dato" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_WebAppAdmSeguimiento_Result">
+          <Property Type="Int32" Name="error" Nullable="true" />
+          <Property Type="String" Name="mensaje" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_WebAppConsultaSeguimiento_Result">
+          <Property Type="Int32" Name="id_seguimiento" Nullable="false" />
+          <Property Type="String" Name="cv" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ruta" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="proveedor" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="placas" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="carrier" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="tip_unidad" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="operador" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fec_recoleccion" Nullable="false" Precision="23" />
+          <Property Type="String" Name="alm_descarga" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="status" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fec_citaProgProv" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fec_llegadaRealProv" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="fec_entradaRealProv" Nullable="true" Precision="23" />
+          <Property Type="String" Name="llegada_otdProv" Nullable="false" MaxLength="2" />
+          <Property Type="Int32" Name="llegada_delayProv" Nullable="true" />
+          <Property Type="String" Name="llegada_justiProv" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="llegada_comenProv" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="fec_salidaProgProv" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="fec_salidaRealProv" Nullable="true" Precision="23" />
+          <Property Type="String" Name="salida_justiProv" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="salida_comenProv" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="estadiaProv" Nullable="true" />
+          <Property Type="String" Name="salida_otdProv" Nullable="false" MaxLength="2" />
+          <Property Type="Int32" Name="salida_delayProv" Nullable="true" />
+          <Property Type="DateTime" Name="fec_proMonde" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="fec_llegadaRealMonde" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="fec_entradaRealMonde" Nullable="true" Precision="23" />
+          <Property Type="String" Name="llegada_otdMonde" Nullable="false" MaxLength="2" />
+          <Property Type="Int32" Name="llegada_delayMonde" Nullable="true" />
+          <Property Type="String" Name="llegada_justiMonde" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="llegada_comenMonde" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="fec_salidaProgMonde" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="fec_salidaRealMonde" Nullable="true" Precision="23" />
+          <Property Type="String" Name="salida_justiMonde" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="salida_comenMonde" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="estadiaMonde" Nullable="true" />
+          <Property Type="String" Name="salida_otdMonde" Nullable="false" MaxLength="2" />
+          <Property Type="Int32" Name="salida_delayMonde" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DHL_SCModelStoreContainer" CdmEntityContainer="DHL_SCEntities" >
+          <FunctionImportMapping FunctionImportName="sp_WebAppSeguimientoConsDatos" FunctionName="DHL_SCModel.Store.sp_WebAppSeguimientoConsDatos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppSeguimientoConsDatos_Result">
+                <ScalarProperty Name="cve_dato" ColumnName="cve_dato" />
+                <ScalarProperty Name="dato" ColumnName="dato" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_WebAppAdmSeguimiento" FunctionName="DHL_SCModel.Store.sp_WebAppAdmSeguimiento">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppAdmSeguimiento_Result">
+                <ScalarProperty Name="error" ColumnName="error" />
+                <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_WebAppConsultaSeguimiento" FunctionName="DHL_SCModel.Store.sp_WebAppConsultaSeguimiento">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppConsultaSeguimiento_Result">
+                <ScalarProperty Name="id_seguimiento" ColumnName="id_seguimiento" />
+                <ScalarProperty Name="cv" ColumnName="cv" />
+                <ScalarProperty Name="ruta" ColumnName="ruta" />
+                <ScalarProperty Name="proveedor" ColumnName="proveedor" />
+                <ScalarProperty Name="placas" ColumnName="placas" />
+                <ScalarProperty Name="carrier" ColumnName="carrier" />
+                <ScalarProperty Name="tip_unidad" ColumnName="tip_unidad" />
+                <ScalarProperty Name="operador" ColumnName="operador" />
+                <ScalarProperty Name="fec_recoleccion" ColumnName="fec_recoleccion" />
+                <ScalarProperty Name="alm_descarga" ColumnName="alm_descarga" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="fec_citaProgProv" ColumnName="fec_citaProgProv" />
+                <ScalarProperty Name="fec_llegadaRealProv" ColumnName="fec_llegadaRealProv" />
+                <ScalarProperty Name="fec_entradaRealProv" ColumnName="fec_entradaRealProv" />
+                <ScalarProperty Name="llegada_otdProv" ColumnName="llegada_otdProv" />
+                <ScalarProperty Name="llegada_delayProv" ColumnName="llegada_delayProv" />
+                <ScalarProperty Name="llegada_justiProv" ColumnName="llegada_justiProv" />
+                <ScalarProperty Name="llegada_comenProv" ColumnName="llegada_comenProv" />
+                <ScalarProperty Name="fec_salidaProgProv" ColumnName="fec_salidaProgProv" />
+                <ScalarProperty Name="fec_salidaRealProv" ColumnName="fec_salidaRealProv" />
+                <ScalarProperty Name="salida_justiProv" ColumnName="salida_justiProv" />
+                <ScalarProperty Name="salida_comenProv" ColumnName="salida_comenProv" />
+                <ScalarProperty Name="estadiaProv" ColumnName="estadiaProv" />
+                <ScalarProperty Name="salida_otdProv" ColumnName="salida_otdProv" />
+                <ScalarProperty Name="salida_delayProv" ColumnName="salida_delayProv" />
+                <ScalarProperty Name="fec_proMonde" ColumnName="fec_proMonde" />
+                <ScalarProperty Name="fec_llegadaRealMonde" ColumnName="fec_llegadaRealMonde" />
+                <ScalarProperty Name="fec_entradaRealMonde" ColumnName="fec_entradaRealMonde" />
+                <ScalarProperty Name="llegada_otdMonde" ColumnName="llegada_otdMonde" />
+                <ScalarProperty Name="llegada_delayMonde" ColumnName="llegada_delayMonde" />
+                <ScalarProperty Name="llegada_justiMonde" ColumnName="llegada_justiMonde" />
+                <ScalarProperty Name="llegada_comenMonde" ColumnName="llegada_comenMonde" />
+                <ScalarProperty Name="fec_salidaProgMonde" ColumnName="fec_salidaProgMonde" />
+                <ScalarProperty Name="fec_salidaRealMonde" ColumnName="fec_salidaRealMonde" />
+                <ScalarProperty Name="salida_justiMonde" ColumnName="salida_justiMonde" />
+                <ScalarProperty Name="salida_comenMonde" ColumnName="salida_comenMonde" />
+                <ScalarProperty Name="estadiaMonde" ColumnName="estadiaMonde" />
+                <ScalarProperty Name="salida_otdMonde" ColumnName="salida_otdMonde" />
+                <ScalarProperty Name="salida_delayMonde" ColumnName="salida_delayMonde" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

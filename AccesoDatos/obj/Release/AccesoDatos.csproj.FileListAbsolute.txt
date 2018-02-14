@@ -1,0 +1,10 @@
+C:\Users\fergarciav\Documents\Repositorios\WebAppSeguimiento\AccesoDatos\bin\Release\AccesoDatos.dll.config
+C:\Users\fergarciav\Documents\Repositorios\WebAppSeguimiento\AccesoDatos\bin\Release\AccesoDatos.dll
+C:\Users\fergarciav\Documents\Repositorios\WebAppSeguimiento\AccesoDatos\bin\Release\AccesoDatos.pdb
+C:\Users\fergarciav\Documents\Repositorios\WebAppSeguimiento\AccesoDatos\bin\Release\EntityFramework.dll
+C:\Users\fergarciav\Documents\Repositorios\WebAppSeguimiento\AccesoDatos\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\fergarciav\Documents\Repositorios\WebAppSeguimiento\AccesoDatos\bin\Release\EntityFramework.xml
+C:\Users\fergarciav\Documents\Repositorios\WebAppSeguimiento\AccesoDatos\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\fergarciav\Documents\Repositorios\WebAppSeguimiento\AccesoDatos\obj\Release\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\fergarciav\Documents\Repositorios\WebAppSeguimiento\AccesoDatos\obj\Release\AccesoDatos.dll
+C:\Users\fergarciav\Documents\Repositorios\WebAppSeguimiento\AccesoDatos\obj\Release\AccesoDatos.pdb

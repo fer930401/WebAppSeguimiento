@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DHL_SCModelStoreContainer" CdmEntityContainer="DHL_SCEntities">
+    <FunctionImportMapping FunctionImportName="sp_WebAppSeguimientoConsDatos" FunctionName="DHL_SCModel.Store.sp_WebAppSeguimientoConsDatos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppSeguimientoConsDatos_Result">
+          <ScalarProperty Name="cve_dato" ColumnName="cve_dato" />
+          <ScalarProperty Name="dato" ColumnName="dato" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_WebAppAdmSeguimiento" FunctionName="DHL_SCModel.Store.sp_WebAppAdmSeguimiento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppAdmSeguimiento_Result">
+          <ScalarProperty Name="error" ColumnName="error" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_WebAppConsultaSeguimiento" FunctionName="DHL_SCModel.Store.sp_WebAppConsultaSeguimiento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppConsultaSeguimiento_Result">
+          <ScalarProperty Name="id_seguimiento" ColumnName="id_seguimiento" />
+          <ScalarProperty Name="cv" ColumnName="cv" />
+          <ScalarProperty Name="ruta" ColumnName="ruta" />
+          <ScalarProperty Name="proveedor" ColumnName="proveedor" />
+          <ScalarProperty Name="placas" ColumnName="placas" />
+          <ScalarProperty Name="carrier" ColumnName="carrier" />
+          <ScalarProperty Name="tip_unidad" ColumnName="tip_unidad" />
+          <ScalarProperty Name="operador" ColumnName="operador" />
+          <ScalarProperty Name="fec_recoleccion" ColumnName="fec_recoleccion" />
+          <ScalarProperty Name="alm_descarga" ColumnName="alm_descarga" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fec_citaProgProv" ColumnName="fec_citaProgProv" />
+          <ScalarProperty Name="fec_llegadaRealProv" ColumnName="fec_llegadaRealProv" />
+          <ScalarProperty Name="fec_entradaRealProv" ColumnName="fec_entradaRealProv" />
+          <ScalarProperty Name="llegada_otdProv" ColumnName="llegada_otdProv" />
+          <ScalarProperty Name="llegada_delayProv" ColumnName="llegada_delayProv" />
+          <ScalarProperty Name="llegada_justiProv" ColumnName="llegada_justiProv" />
+          <ScalarProperty Name="llegada_comenProv" ColumnName="llegada_comenProv" />
+          <ScalarProperty Name="fec_salidaProgProv" ColumnName="fec_salidaProgProv" />
+          <ScalarProperty Name="fec_salidaRealProv" ColumnName="fec_salidaRealProv" />
+          <ScalarProperty Name="salida_justiProv" ColumnName="salida_justiProv" />
+          <ScalarProperty Name="salida_comenProv" ColumnName="salida_comenProv" />
+          <ScalarProperty Name="estadiaProv" ColumnName="estadiaProv" />
+          <ScalarProperty Name="salida_otdProv" ColumnName="salida_otdProv" />
+          <ScalarProperty Name="salida_delayProv" ColumnName="salida_delayProv" />
+          <ScalarProperty Name="fec_proMonde" ColumnName="fec_proMonde" />
+          <ScalarProperty Name="fec_llegadaRealMonde" ColumnName="fec_llegadaRealMonde" />
+          <ScalarProperty Name="fec_entradaRealMonde" ColumnName="fec_entradaRealMonde" />
+          <ScalarProperty Name="llegada_otdMonde" ColumnName="llegada_otdMonde" />
+          <ScalarProperty Name="llegada_delayMonde" ColumnName="llegada_delayMonde" />
+          <ScalarProperty Name="llegada_justiMonde" ColumnName="llegada_justiMonde" />
+          <ScalarProperty Name="llegada_comenMonde" ColumnName="llegada_comenMonde" />
+          <ScalarProperty Name="fec_salidaProgMonde" ColumnName="fec_salidaProgMonde" />
+          <ScalarProperty Name="fec_salidaRealMonde" ColumnName="fec_salidaRealMonde" />
+          <ScalarProperty Name="salida_justiMonde" ColumnName="salida_justiMonde" />
+          <ScalarProperty Name="salida_comenMonde" ColumnName="salida_comenMonde" />
+          <ScalarProperty Name="estadiaMonde" ColumnName="estadiaMonde" />
+          <ScalarProperty Name="salida_otdMonde" ColumnName="salida_otdMonde" />
+          <ScalarProperty Name="salida_delayMonde" ColumnName="salida_delayMonde" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
